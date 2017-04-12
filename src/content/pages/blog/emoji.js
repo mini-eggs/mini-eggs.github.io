@@ -19,5 +19,5 @@ export default {
     <br/>
     But hey, look at the URl bar now. ☺️
 `,
-  image: require("./learning.image.jpg")
+  image: require("./emoji.image.jpg")
 };
