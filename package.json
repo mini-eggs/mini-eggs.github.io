@@ -1,0 +1,28 @@
+{
+  "name": "portfolio_next",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "material-ui": "^0.17.2",
+    "react": "^15.5.3",
+    "react-async-component": "^1.0.0-beta.2",
+    "react-dom": "^15.5.3",
+    "react-loadable": "^3.2.2",
+    "react-redux": "^5.0.4",
+    "react-router": "^4.0.0",
+    "react-router-dom": "^4.0.0",
+    "react-router-redux": "^4.0.8",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0",
+    "styled-components": "^1.4.4"
+  },
+  "devDependencies": {
+    "react-scripts": "/Users/evanjones/desktop/evansapps/create-react-app/packages/react-scripts/react-scripts-0.9.4.tgz"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
