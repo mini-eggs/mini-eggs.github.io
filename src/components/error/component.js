@@ -15,7 +15,8 @@ export default function() {
         height: "50vh"
       }}
     >
-      Page not found,<br />go home?
+      404<br />
+      Page not found
     </Link>
   );
 }

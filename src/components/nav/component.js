@@ -14,12 +14,7 @@ export default class extends PureComponent {
 
   render = () => {
     return (
-      <AppBar
-        title={this.props.title}
-        width={300}
-        onLeftIconButtonTouchTap={this.drawer}
-        zDepth={0}
-      >
+      <AppBar width={300} onLeftIconButtonTouchTap={this.drawer} zDepth={0}>
         <Desktop {...this.props} />
         <Mobile
           {...this.props}

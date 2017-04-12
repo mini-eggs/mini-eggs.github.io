@@ -34,3 +34,13 @@ export const Right = Styled.div`
     display: none;
   }
 `;
+export const Title = Styled.h2`
+  margin: 0;
+`;
+export const Break = Styled.hr`
+  margin: 40px 0 50px;
+  border-width: 0;
+  background-color: black;
+  height: 2px;
+  border-radius: 1px;
+`;

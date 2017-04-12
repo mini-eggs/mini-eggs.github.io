@@ -1,14 +1,14 @@
 import React from "react";
 import Paper from "material-ui/Paper";
 import Nav from "../nav/";
-import { Container, Image, Left, Right, Content } from "./styles";
+import { Container, Image, Left, Right, Content, Title, Break } from "./styles";
 
 export default function Page(props) {
   return (
     <div className="max-width">
       <Nav {...props} />
       <Paper
-        zDepth={3}
+        zDepth={1}
         style={{
           marginTop: "25px",
           marginBottom: "50px",
@@ -23,7 +23,11 @@ export default function Page(props) {
             <Image style={{ backgroundImage: `url("${props.image}")` }} />
           </Right>
           <Left>
-            <Content dangerouslySetInnerHTML={{ __html: props.body }} />
+            <Content>
+              <Title>{props.title}</Title>
+              <Break />
+              <div dangerouslySetInnerHTML={{ __html: props.body }} />
+            </Content>
           </Left>
         </Container>
       </Paper>
