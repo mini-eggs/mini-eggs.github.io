@@ -5,6 +5,10 @@ import Page from "./component";
 
 function findPage(pages, pathname) {
   const find = pathname.replace("/page/", "");
+  // preload for react-snapshot
+  if (find === "/") {
+    return pages[0];
+  }
   let status = false;
   pages.forEach(page => {
     if (page.link === find) {

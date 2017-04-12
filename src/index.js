@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-snapshot";
 import "./styles/main.css";
 import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
@@ -42,13 +42,14 @@ const reducers = combineReducers({
 
 const store = createStore(reducers, preloaded, applyMiddleware(middleware));
 
-ReactDOM.render(
+render(
   <MuiThemeProvider muiTheme={theme}>
     <Provider store={store}>
       <HashRouter>
         <div>
           <Welcome />
           <Switch>
+            <Route exact="/" component={Page} />
             <Route path="/page/:page" component={Page} />
             <Redirect from="/" to="/page/home" />
           </Switch>
