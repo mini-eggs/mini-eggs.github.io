@@ -43,7 +43,17 @@ export default class extends PureComponent {
         open={this.props.open}
       >
         <List>
-          <Subheader>Evan Jones / {this.props.title}</Subheader>
+          <Subheader
+            style={{
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              boxSizing: "border-box",
+              paddingRight: "16px"
+            }}
+          >
+            Evan Jones / {this.props.title}
+          </Subheader>
           <Divider />
           {this.props.links.map((link, index) => {
             return (

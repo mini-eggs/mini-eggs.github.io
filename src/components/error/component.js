@@ -6,7 +6,7 @@ export default function() {
     <Link
       to="/"
       style={{
-        color: "white",
+        color: "black",
         textAlign: "center",
         textDecoration: "none",
         display: "flex",

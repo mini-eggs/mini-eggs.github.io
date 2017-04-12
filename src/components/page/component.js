@@ -1,7 +1,7 @@
 import React from "react";
 import Paper from "material-ui/Paper";
 import Nav from "../nav/";
-import { Container, Image, Left, Right, Content, Dark } from "./styles";
+import { Container, Image, Left, Right, Content } from "./styles";
 
 export default function Page(props) {
   return (
@@ -20,9 +20,7 @@ export default function Page(props) {
       >
         <Container>
           <Right>
-            <Image style={{ backgroundImage: `url("${props.image}")` }}>
-              {/*<Dark />*/}
-            </Image>
+            <Image style={{ backgroundImage: `url("${props.image}")` }} />
           </Right>
           <Left>
             <Content dangerouslySetInnerHTML={{ __html: props.body }} />

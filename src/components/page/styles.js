@@ -34,8 +34,3 @@ export const Right = Styled.div`
     display: none;
   }
 `;
-export const Dark = Styled.div`
-  display: flex;
-  flex: 1;
-  background-color: rgba(0,0,0,0.5);
-`;

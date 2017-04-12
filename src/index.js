@@ -3,12 +3,6 @@ import ReactDOM from "react-dom";
 import "./styles/main.css";
 import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
-import {
-  grey900,
-  grey50,
-  blueGrey700,
-  blueGrey600
-} from "material-ui/styles/colors";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import createHistory from "history/createHashHistory";
@@ -23,24 +17,6 @@ import Pages from "./reducers/pages";
 import Links from "./reducers/links";
 import PagesContent from "./content/pages/";
 import LinksContent from "./content/links/";
-
-// const theme = getMuiTheme({
-//   palette: {
-//     primary1Color: blueGrey700,
-//     primary2Color: grey50,
-//     primary3Color: grey50,
-//     accent1Color: grey50,
-//     accent2Color: grey50,
-//     accent3Color: grey50,
-//     textColor: grey50,
-//     alternateTextColor: grey50,
-//     canvasColor: blueGrey600,
-//     borderColor: grey900,
-//     disabledColor: grey900,
-//     clockCircleColor: grey900,
-//     shadowColor: grey900
-//   }
-// });
 
 const theme = getMuiTheme({
   palette: {

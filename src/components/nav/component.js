@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import AppBar from "material-ui/AppBar";
-import MenuItem from "material-ui/MenuItem";
 import Desktop from "./desktop";
 import Mobile from "./mobile";
 

@@ -11,7 +11,7 @@ const blogChildren = [
     route: "/page/learing-in-2016-and-onward"
   }
 ];
-const projectsChildren = [{ name: "Flippour", route: "/page/flippour" }];
+// const projectsChildren = [{ name: "Flippour", route: "/page/flippour" }];
 
 export default [
   { name: "Home", route: "/page/home", children: [] },

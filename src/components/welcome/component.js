@@ -1,7 +1,7 @@
 import React from "react";
 import Styled from "styled-components";
 
-const image = "https://static.pexels.com/photos/195399/pexels-photo-195399.jpeg";
+// const image = "https://static.pexels.com/photos/195399/pexels-photo-195399.jpeg";
 
 const Container = Styled.div`
   height: 25vh;
