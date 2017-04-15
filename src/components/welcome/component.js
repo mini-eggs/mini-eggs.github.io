@@ -9,6 +9,9 @@ const Container = Styled.div`
   background-size: cover;
   background-position: center center;
   display: flex;
+  @media (max-width: 375px) {
+    margin-top: 25px;
+  }
 `;
 const Content = Styled.div`
   display: flex;

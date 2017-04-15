@@ -22,11 +22,15 @@ export const Image = Styled.div`
   flex: 1;
 `;
 export const Left = Styled.div`
+  transition-duration: 250ms;
+  transform-origin: right;
   flex-direction: column;
   display: flex;
   flex: 1;
 `;
 export const Right = Styled.div`
+  transition-duration: 250ms;
+  transform-origin: left;
   flex-direction: column;
   display: flex;
   flex: 1;
