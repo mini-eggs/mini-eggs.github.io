@@ -51,6 +51,8 @@ render(
           <Switch>
             <Route exact="/" component={Page} />
             <Route path="/page/:page" component={Page} />
+            <Route path="/blog/:blog" component={Page} />
+            <Route path="/project/:project" component={Page} />
             <Redirect from="/" to="/page/home" />
           </Switch>
         </div>

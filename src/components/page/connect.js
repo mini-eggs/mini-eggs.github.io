@@ -4,7 +4,10 @@ import Error from "../error/";
 import Page from "./component";
 
 function findPage(pages, pathname) {
-  const find = pathname.replace("/page/", "");
+  const find = pathname
+    .replace("/page/", "")
+    .replace("/project/", "")
+    .replace("/blog/", "");
   // preload for react-snapshot
   if (find === "/") {
     return pages[0];

@@ -5,17 +5,21 @@ const twitter = "https://twitter.com/minieggs40";
 const email = "mailto:evanjones4040@gmail.com";
 
 const blogChildren = [
-  { name: "Emojis and the URL", route: "/page/🐶" },
-  { name: "What Is The DOM", route: "/page/what-is-the-dom" },
+  { name: "Emojis and the URL", route: "/blog/🐶" },
+  { name: "What Is The DOM", route: "/blog/what-is-the-dom" },
   {
     name: "Learning in 2016 and Onward",
-    route: "/page/learing-in-2016-and-onward"
+    route: "/blog/learing-in-2016-and-onward"
   }
 ];
 
 const projectsChildren = [
-  { name: "Flippour", route: "/page/flippour" },
-  { name: "Triangly", route: "/page/triangly" }
+  { name: "Flippour", route: "/project/flippour" },
+  { name: "Triangly", route: "/project/triangly" },
+  {
+    name: "SSR w/ CRA",
+    route: "/project/server-side-rendering-with-create-react-app"
+  }
 ];
 
 export default [
