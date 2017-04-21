@@ -15,7 +15,7 @@
     "react-snapshot": "^1.0.4",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
-    "styled-components": "^1.4.4"
+    "styled-components": "next"
   },
   "devDependencies": {
     "react-scripts": "/Users/evanjones/desktop/evansapps/create-react-app/packages/react-scripts/react-scripts-0.9.4.tgz"
