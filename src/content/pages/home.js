@@ -19,5 +19,5 @@ export default {
     <br/>
     Cheers
 `,
-  image: require("./home.image.jpeg")
+  image: require("./home.image.png")
 };
