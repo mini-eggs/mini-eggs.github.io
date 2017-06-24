@@ -48,7 +48,7 @@ class DesktopButton extends PureComponent {
         <FlatButton onTouchTap={this.handleTouchTap}>
           {this.props.name}
         </FlatButton>
-        {this.props.children.length > 0
+        {(this.props.children || []).length > 0
           ? <Popover
               open={this.state.open}
               anchorEl={this.state.anchorEl}

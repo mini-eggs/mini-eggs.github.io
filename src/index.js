@@ -2,7 +2,6 @@ import React from "react";
 import { render } from "react-snapshot";
 import "./styles/main.js";
 import injectTapEventPlugin from "react-tap-event-plugin";
-injectTapEventPlugin();
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import createHistory from "history/createHashHistory";
@@ -17,6 +16,7 @@ import Pages from "./reducers/pages";
 import Links from "./reducers/links";
 import PagesContent from "./content/pages/";
 import LinksContent from "./content/links/";
+injectTapEventPlugin();
 
 const theme = getMuiTheme({
   palette: {
