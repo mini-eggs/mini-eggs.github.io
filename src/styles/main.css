@@ -1,0 +1,125 @@
+html {
+  background-color: #f1f1f1;
+}
+
+body {
+  margin: 0;
+  font-family: SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  line-height: 1.4;
+  color: black;
+  text-decoration: none;
+}
+
+.link,
+a,
+span {
+  position: relative;
+}
+
+.link {
+  display: inline-block;
+}
+
+.link:before {
+  content: " ";
+  -webkit-transition-duration: .35s;
+  -o-transition-duration: .35s;
+  transition-duration: .35s;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.link > * {
+  position: relative;
+}
+
+.link:before {
+  position: absolute;
+  width: calc(100% + 20px);
+  height: 100%;
+  left: 50%;
+  top: 0;
+  opacity: .75;
+}
+
+.link-0:before {
+  background-color: #76adc4;
+  -webkit-transform: scaleX(0) rotate(2deg) translateX(-50%);
+  -ms-transform: scaleX(0) rotate(2deg) translateX(-50%);
+  transform: scaleX(0) rotate(2deg) translateX(-50%);
+}
+.link-0:hover:before {
+  -webkit-transform: scaleX(1) rotate(2deg) translateX(-50%);
+  -ms-transform: scaleX(1) rotate(2deg) translateX(-50%);
+  transform: scaleX(1) rotate(2deg) translateX(-50%);
+}
+
+.link-1:before {
+  background-color: #d298c9;
+  -webkit-transform: scaleX(0) rotate(-3deg) translateX(-50%);
+  -ms-transform: scaleX(0) rotate(-3deg) translateX(-50%);
+  transform: scaleX(0) rotate(-3deg) translateX(-50%);
+}
+
+.link-1:hover:before {
+  -webkit-transform: scaleX(1) rotate(-3deg) translateX(-50%);
+  -ms-transform: scaleX(1) rotate(-3deg) translateX(-50%);
+  transform: scaleX(1) rotate(-3deg) translateX(-50%);
+}
+
+.link-2:before {
+  background-color: #7c986c;
+  -webkit-transform: scaleX(0) rotate(1deg) translateX(-50%);
+  -ms-transform: scaleX(0) rotate(1deg) translateX(-50%);
+  transform: scaleX(0) rotate(1deg) translateX(-50%);
+}
+
+.link-2:hover:before {
+  -webkit-transform: scaleX(1) rotate(1deg) translateX(-50%);
+  -ms-transform: scaleX(1) rotate(1deg) translateX(-50%);
+  transform: scaleX(1) rotate(1deg) translateX(-50%);
+}
+
+.link-3:before {
+  background-color: #f6a2e7;
+  -webkit-transform: scaleX(0) rotate(3deg) translateX(-50%);
+  -ms-transform: scaleX(0) rotate(3deg) translateX(-50%);
+  transform: scaleX(0) rotate(3deg) translateX(-50%);
+}
+
+.link-3:hover:before {
+  -webkit-transform: scaleX(1) rotate(3deg) translateX(-50%);
+  -ms-transform: scaleX(1) rotate(3deg) translateX(-50%);
+  transform: scaleX(1) rotate(3deg) translateX(-50%);
+}
+
+.link-4:before {
+  background-color: #f18660;
+  -webkit-transform: scaleX(0) rotate(-2deg) translateX(-50%);
+  -ms-transform: scaleX(0) rotate(-2deg) translateX(-50%);
+  transform: scaleX(0) rotate(-2deg) translateX(-50%);
+}
+
+.link-4:hover:before {
+  -webkit-transform: scaleX(1) rotate(-2deg) translateX(-50%);
+  -ms-transform: scaleX(1) rotate(-2deg) translateX(-50%);
+  transform: scaleX(1) rotate(-2deg) translateX(-50%);
+}
+
+.link-5:before {
+  background-color: #ac8fb8;
+  -webkit-transform: scaleX(0) rotate(3deg) translateX(-50%);
+  -ms-transform: scaleX(0) rotate(3deg) translateX(-50%);
+  transform: scaleX(0) rotate(3deg) translateX(-50%);
+}
+
+.link-5:hover:before {
+  -webkit-transform: scaleX(1) rotate(3deg) translateX(-50%);
+  -ms-transform: scaleX(1) rotate(3deg) translateX(-50%);
+  transform: scaleX(1) rotate(3deg) translateX(-50%);
+}

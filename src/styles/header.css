@@ -1,0 +1,16 @@
+header {
+  padding: 100px 0 50px;
+}
+
+header h1 {
+  font-size: 32px;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 25px 0 50px;
+  }
+  header h1 {
+    font-size: 28px;
+  }
+}

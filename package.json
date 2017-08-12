@@ -1,0 +1,21 @@
+{
+  "name": "evan-jones.surge.sh",
+  "version": "1.0.0",
+  "private": false,
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-scripts": "1.0.11",
+    "reason-react": "^0.2.3"
+  },
+  "scripts": {
+    "start": "yarn restart & react-scripts start",
+    "build": "yarn reclean && yarn rebuild && react-scripts build && react-snapshot",
+    "restart": "cd src && bsb -make-world -w",
+    "rebuild": "cd src && bsb -make-world",
+    "reclean": "cd src && bsb -clean-world"
+  },
+  "devDependencies": {
+    "bs-platform": "^1.8.2",
+    "react-snapshot": "next"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "reason": { "react-jsx": 2 },
+  "bs-dependencies": ["reason-react"],
+  "sources": [
+    {
+      "dir": "re",
+      "subdirs": ["components", "constants"]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+section {
+  font-size: 28px;
+  padding-bottom: 5px;
+}
+
+section:last-of-type {
+  padding-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  section {
+    font-size: 24px;
+  }
+}
