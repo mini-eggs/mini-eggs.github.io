@@ -38,7 +38,7 @@ type Service struct {
 func Default(space string, token string) *Service {
 	return &Service{
 		BlogAPI: func() string {
-			return "https://cdn.contentful.com/spaces/" + space + "/entries?access_token=" + token + "&content_type=post"
+			return "https://cdn.contentful.com/spaces/" + space + "/entries?access_token=" + token + "&content_type=post&order=-sys.createdAt"
 		},
 		PostAPI: func(post string) string {
 			return "https://cdn.contentful.com/spaces/" + space + "/entries/" + post + "?access_token=" + token
