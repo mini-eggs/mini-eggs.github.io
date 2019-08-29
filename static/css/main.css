@@ -4,6 +4,7 @@
   list-style: none;
   border: 0;
   font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 1.4;
 }
 
 
@@ -39,7 +40,6 @@ main article * {
 
 main article h1 { 
   font-size: 36px;
-  margin-bottom: 30px;
 }
 
 main {
@@ -155,6 +155,36 @@ img {
   height: 100%;
 }
 
+code { 
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  padding: 15px;
+  background: white;
+  display: block;
+  border-radius: 4px;
+}
+
+blockquote {
+  font-size: 28px;
+  display: block;
+  border: blue solid 0;
+  border-left-width: 4px;
+  padding: 1px 15px; /* some weird css bug? Change to 1px -> 0px to see */
+}
+
+main article .desc p,
+main article .desc > * {
+  margin: 15px auto;
+}
+
+main article .desc a {
+  color: blue;
+  text-decoration: none;
+}
+
+main article .desc a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 800px) {
   footer,
   header {
@@ -173,10 +203,6 @@ img {
 
   main {
     padding: 15px;
-  }
-
-  main article h1 { 
-    margin-bottom: 15px;
   }
 
   main ul .image-container .text h3 {
