@@ -61,6 +61,12 @@ func TestPages(t *testing.T) {
 	app.s.ServeHTTP(res, req)
 	assert.Equal(t, http.StatusOK, res.Code, "OK response is expected")
 
+	// ping
+	req, _ = http.NewRequest("GET", "/ping", nil)
+	res = httptest.NewRecorder()
+	app.s.ServeHTTP(res, req)
+	assert.Equal(t, http.StatusOK, res.Code, "OK response is expected")
+
 	// about
 	req, _ = http.NewRequest("GET", "/about", nil)
 	res = httptest.NewRecorder()

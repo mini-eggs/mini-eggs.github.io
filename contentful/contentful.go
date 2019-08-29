@@ -17,12 +17,14 @@ type contentful struct {
 // contentful data type
 type theirItem struct {
 	Fields struct {
-		Title string
-		Slug  string
-		Img   string
-		Alt   string
-		Desc  string
-		Raw   template.HTML
+		Title     string
+		Slug      string
+		Img       string
+		ImgAlt    string
+		Alt       string
+		Desc      string
+		ShortDesc string
+		Raw       template.HTML
 	}
 	Sys struct {
 		ID string
@@ -80,7 +82,9 @@ func (c contentful) Get(id string) (ret data.Item, err error) {
 	ret = item{
 		entry.Fields.Title,
 		entry.Fields.Desc,
+		entry.Fields.ShortDesc,
 		entry.Fields.Img,
+		entry.Fields.ImgAlt,
 		entry.Fields.Slug,
 		entry.Sys.ID,
 	}
@@ -115,7 +119,9 @@ func (c contentful) List(id string) (ret []data.Item, err error) {
 		ret = append(ret, item{
 			single.Fields.Title,
 			single.Fields.Desc,
+			single.Fields.ShortDesc,
 			single.Fields.Img,
+			single.Fields.ImgAlt,
 			single.Fields.Slug,
 			single.Sys.ID,
 		})

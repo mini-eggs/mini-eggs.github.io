@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>evanjon.es</title>
     {{ template "_head.html" }}
@@ -13,7 +13,7 @@
           <a href="/post/{{ .Slug }}/{{ .ID }}">
             <div>
               <div class="image-container">
-                <img src="{{ .Image }}" />
+                <img src="{{ .Image }}" alt="{{ .ImageAlt }}"/>
                 <div class="text">
                   <h3>{{ .Title }}</h3>
                 </div>

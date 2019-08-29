@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>{{ .Title }} | evanjon.es</title>
     {{ template "_head.html" }}
+    <meta name="twitter:site" content="https://evanjon.es/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ .Title }}" />
+    <meta name="twitter:description" content="{{ .ShortDesc }}" />
+    <meta name="description" content="{{ .ShortDesc }}" />
+    <meta name="twitter:image:src" content="{{ .Image }}" />
   </head>
   <body>
     {{ template "_header.html" }}
@@ -11,7 +17,7 @@
         {{ if .Image }}
         <div>
           <div class="image-container">
-            <img src="{{ .Image }}" />
+            <img src="{{ .Image }}" alt="{{ .ImageAlt }}"/>
           </div>
         </div>
         {{ end }}

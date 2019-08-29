@@ -3,7 +3,7 @@ package contentful
 // item class, match data.Item interface
 
 type item struct {
-	theTitle, theDesc, theImage, theSlug, theID string
+	theTitle, theDesc, theShortDesc, theImage, theImageAlt, theSlug, theID string
 }
 
 func (p item) Title() string {
@@ -14,8 +14,16 @@ func (p item) Desc() string {
 	return p.theDesc
 }
 
+func (p item) ShortDesc() string {
+	return p.theShortDesc
+}
+
 func (p item) Image() string {
 	return p.theImage
+}
+
+func (p item) ImageAlt() string {
+	return p.theImageAlt
 }
 
 func (p item) Slug() string {

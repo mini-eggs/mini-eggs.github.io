@@ -1,4 +1,4 @@
-package handler
+package main
 
 import (
 	"net/http"
@@ -10,12 +10,12 @@ import (
 	"evanjon.es/rss"
 )
 
-type I interface {
+type i interface {
 	Run()
 	ServeHTTP(http.ResponseWriter, *http.Request)
 }
 
-func build() I {
+func build() i {
 	c := contentful.Default(
 		os.Getenv("SPACE_ID"),
 		os.Getenv("TOKEN"),
@@ -41,6 +41,7 @@ func main() {
 	build().Run()
 }
 
+// For Zeit's Now 2.0.
 func H(w http.ResponseWriter, r *http.Request) {
 	build().ServeHTTP(w, r)
 }
