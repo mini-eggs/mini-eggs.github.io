@@ -5,6 +5,7 @@
   border: 0;
   font-family: Segoe UI,SegoeUI,"Helvetica Neue",Helvetica,Arial,sans-serif;
   line-height: 1.4;
+  color: #2c3e50;
 }
 
 
@@ -12,7 +13,7 @@ body {
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
-  background: lightgrey;
+  background: white;
 }
 
 body > * {
@@ -28,7 +29,6 @@ body > * {
 
 hr {
   background: blue;
-  border-radius: 4px;
   height: 4px;
   overflow: hidden;
 }
@@ -39,7 +39,37 @@ main article * {
 }
 
 main article h1 { 
-  font-size: 36px;
+  font-size: 38px;
+}
+
+main article h2 { 
+  font-size: 34px;
+}
+
+main article h3 { 
+  font-size: 30px;
+}
+
+main article h4 { 
+  font-size: 26px;
+}
+
+main article h5 { 
+  font-size: 22px;
+}
+
+main article h6 { 
+  font-size: 18px;
+}
+
+main article h1, 
+main article h2, 
+main article h3, 
+main article h4, 
+main article h5, 
+main article h6 {
+  color: blue;
+  font-weight: 900;
 }
 
 main {
@@ -113,7 +143,7 @@ main ul .image-container .text {
 
 main ul .image-container .text h3 {
   color: black;
-  font-size: 36px;
+  font-size: 38px;
   line-height: 42px;
   text-align: center;
   padding: 30px;
@@ -140,7 +170,7 @@ img {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
   border-radius: 4px;
   overflow: hidden;
-  background-color: rgba(0,0,0,0.25);
+  background-color: rgba(0,0,0,0.1);
 }
 
 .image-container img {
@@ -158,9 +188,10 @@ img {
 code { 
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
   padding: 15px;
-  background: white;
+  background: rgba(0, 0, 0, 0.1);
   display: block;
   border-radius: 4px;
+  overflow: auto;
 }
 
 blockquote {
@@ -203,6 +234,7 @@ main article .desc a:hover {
 
   main {
     padding: 15px;
+    margin-bottom: 0;
   }
 
   main ul .image-container .text h3 {
@@ -215,5 +247,48 @@ main article .desc a:hover {
 
   .image-container {
     margin-bottom: 15px;
+  }
+
+  footer,
+  header { 
+    flex-direction: column;
+    align-items: flex-start;
+    background-position: right center;
+    background: none;
+    position: relative;
+  }
+
+  header:after {
+    content: " ";
+    z-index: 1;
+    background: url('/static/img/Artboard 5.svg');
+    background-size: auto 125%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  header > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  footer nav li a:after,
+  header nav li a:after {
+    content: ",";
+  }
+
+  footer nav li:last-of-type a:after,
+  header nav li:last-of-type a:after {
+    content: "";
+  }
+
+  footer nav li:first-of-type a,
+  header nav li:first-of-type a{
+    margin-left: 0;
   }
 }
