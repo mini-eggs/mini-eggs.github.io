@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ .Title }} | evanjon.es</title>
+    {{ template "_head.html" }}
+  </head>
+  <body>
+    {{ template "_header.html" }}
+    <main>
+      <article>
+        {{ if .Image }}
+        <div>
+          <div class="image-container">
+            <img src="{{ .Image }}" />
+          </div>
+        </div>
+        {{ end }}
+        <h1>{{ .Title}}</h1>
+        <div>{{ .Desc }}</div>
+      </article>
+    </main>
+    {{ template "_footer.html" }}
+  </body>
+</html>

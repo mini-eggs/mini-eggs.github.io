@@ -3,3 +3,4 @@ now.json
 .cache
 vendor
 static
+.env

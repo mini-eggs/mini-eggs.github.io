@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>evanjon.es</title>
+    {{ template "_head.html" }}
+  </head>
+  <body>
+    {{ template "_header.html" }}
+    <main>
+      <ul>
+        {{ range . }}
+        <li>
+          <a href="/post/{{ .Slug }}/{{ .ID }}">
+            <div>
+              <div class="image-container">
+                <img src="{{ .Image }}" />
+                <div class="text">
+                  <h3>{{ .Title }}</h3>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </main>
+    {{ template "_footer.html" }}
+  </body>
+</html>

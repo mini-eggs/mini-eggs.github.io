@@ -3,39 +3,38 @@ package handler
 import (
 	"net/http"
 	"os"
-	"evanjon.es/controller/content"
-	"evanjon.es/service/contentful"
-	"evanjon.es/service/templates"
-	"github.com/gin-gonic/gin"
+
+	"evanjon.es/app"
+	"evanjon.es/contentful"
+	"evanjon.es/rss"
 )
 
-func router() *gin.Engine {
-	homeID := os.Getenv("HOME_ID")
-	sidebarID := os.Getenv("SIDEBAR_ID")
-	spaceID := os.Getenv("SPACE_ID")
-	accessToken := os.Getenv("ACCESS_TOKEN")
+type I interface {
+	Run()
+	ServeHTTP(http.ResponseWriter, *http.Request)
+}
 
-	Router := gin.Default()
-	TemplateService := templates.Default()
-	ContentfulService := contentful.Default(spaceID, accessToken)
-	ContentController := content.Default(ContentfulService, sidebarID)
+func build() I {
+	c := contentful.Default(
+		os.Getenv("SPACE_ID"),
+		os.Getenv("TOKEN"),
+	)
 
-	Router.SetHTMLTemplate(TemplateService.Root)
-	Router.GET("/", ContentController.SingleDefault(homeID))
-	Router.GET("/post/:slug/:id", ContentController.Single)
-	Router.GET("/posts", ContentController.List)
+	r := rss.Default(
+		"evanjon.es",
+		"My personal corner of the big WWW.",
+		"https://evanjon.es/",
+		"Evan M Jones",
+		"me@evanjon.es",
+	)
 
-	return Router
+	return app.Default(c, r)
 }
 
 func main() {
-	r := router()
-	r.Static("/static", "./static")
-	r.Run()
+	build().Run()
 }
 
-// Handler - zeit
-func Handler(w http.ResponseWriter, r *http.Request) {
-	gin.SetMode(gin.ReleaseMode)
-	router().ServeHTTP(w, r)
+func H(w http.ResponseWriter, r *http.Request) {
+	build().ServeHTTP(w, r)
 }
