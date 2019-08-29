@@ -1,5 +1,7 @@
 package contentful
 
+import "html/template"
+
 // item class, match data.Item interface
 
 type item struct {
@@ -10,8 +12,8 @@ func (p item) Title() string {
 	return p.theTitle
 }
 
-func (p item) Desc() string {
-	return p.theDesc
+func (p item) Desc() template.HTML {
+	return template.HTML(p.theDesc)
 }
 
 func (p item) ShortDesc() string {

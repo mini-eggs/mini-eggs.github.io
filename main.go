@@ -1,4 +1,4 @@
-package handler
+package main
 
 import (
 	"net/http"
@@ -7,6 +7,7 @@ import (
 	"evanjon.es/app"
 	"evanjon.es/config"
 	"evanjon.es/contentful"
+	"evanjon.es/markdown"
 	"evanjon.es/rss"
 )
 
@@ -17,6 +18,7 @@ type i interface {
 
 func build() i {
 	c := contentful.Default(
+		markdown.Default(),
 		os.Getenv("SPACE_ID"),
 		os.Getenv("TOKEN"),
 	)

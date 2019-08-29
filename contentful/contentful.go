@@ -10,7 +10,12 @@ import (
 	"evanjon.es/data"
 )
 
+type markdownProvider interface {
+	Format(string) string
+}
+
 type contentful struct {
+	md           markdownProvider
 	space, token string
 }
 
@@ -38,8 +43,8 @@ type theirList struct {
 
 // contentful service
 
-func Default(space, token string) contentful {
-	return contentful{space, token}
+func Default(md markdownProvider, space, token string) contentful {
+	return contentful{md, space, token}
 }
 
 // url construction
@@ -81,7 +86,7 @@ func (c contentful) Get(id string) (ret data.Item, err error) {
 
 	ret = item{
 		entry.Fields.Title,
-		entry.Fields.Desc,
+		c.md.Format(entry.Fields.Desc),
 		entry.Fields.ShortDesc,
 		entry.Fields.Img,
 		entry.Fields.ImgAlt,
@@ -118,7 +123,7 @@ func (c contentful) List(id string) (ret []data.Item, err error) {
 	for _, single := range entry.Items {
 		ret = append(ret, item{
 			single.Fields.Title,
-			single.Fields.Desc,
+			c.md.Format(single.Fields.Desc),
 			single.Fields.ShortDesc,
 			single.Fields.Img,
 			single.Fields.ImgAlt,

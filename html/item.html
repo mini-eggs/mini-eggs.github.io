@@ -11,20 +11,22 @@
     <meta name="twitter:image:src" content="{{ .Image }}" />
   </head>
   <body>
-    {{ template "_header.html" }}
-    <main>
-      <article>
-        {{ if .Image }}
-        <div>
-          <div class="image-container">
-            <img src="{{ .Image }}" alt="{{ .ImageAlt }}"/>
+    <div class="min-h">
+      {{ template "_header.html" }}
+      <main>
+        <article>
+          {{ if .Image }}
+          <div>
+            <div class="image-container">
+              <img src="{{ .Image }}" alt="{{ .ImageAlt }}"/>
+            </div>
           </div>
-        </div>
-        {{ end }}
-        <h1>{{ .Title}}</h1>
-        <div>{{ .Desc }}</div>
-      </article>
-    </main>
+          {{ end }}
+          <h1>{{ .Title}}</h1>
+          <div>{{ .Desc }}</div>
+        </article>
+      </main>
+    </div>
     {{ template "_footer.html" }}
   </body>
 </html>

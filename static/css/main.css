@@ -21,6 +21,10 @@ body > * {
   text-align: left;
 }
 
+.min-h {
+  min-height: 65vh;
+}
+
 hr {
   background: blue;
   border-radius: 4px;

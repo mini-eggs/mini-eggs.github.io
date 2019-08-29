@@ -19,7 +19,7 @@ func Default(title, desc, link, author, email string) rss {
 func (r rss) rss(item data.Item) *feeds.Item {
 	return &feeds.Item{
 		Title:       item.Title(),
-		Description: item.Desc(),
+		Description: string(item.Desc()),
 		Author:      &feeds.Author{Name: r.author, Email: r.email},
 		Link:        &feeds.Link{Href: r.link + "post/" + item.Slug() + "/" + item.ID()},
 	}
