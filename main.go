@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"evanjon.es/app"
+	"evanjon.es/config"
 	"evanjon.es/contentful"
 	"evanjon.es/rss"
 )
@@ -28,7 +29,12 @@ func build() I {
 		"me@evanjon.es",
 	)
 
-	return app.Default(c, r)
+	cfg := config.Default(
+		os.Getenv("HOME_ID"),
+		os.Getenv("ABOUT_ID"),
+	)
+
+	return app.Default(c, r, cfg)
 }
 
 func main() {

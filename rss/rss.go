@@ -5,6 +5,9 @@ import (
 	"github.com/gorilla/feeds"
 )
 
+// basically a wrapper over "github.com/gorilla/feeds" to fit our
+// data.Item data type.
+
 type rss struct {
 	title, desc, link, author, email string
 }

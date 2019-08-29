@@ -14,10 +14,7 @@ type contentful struct {
 	space, token string
 }
 
-type item struct {
-	theTitle, theDesc, theImage, theSlug, theID string
-}
-
+// contentful data type
 type theirItem struct {
 	Fields struct {
 		Title string
@@ -32,6 +29,7 @@ type theirItem struct {
 	}
 }
 
+// contentful data type
 type theirList struct {
 	Items []theirItem
 }
@@ -52,14 +50,14 @@ func (c contentful) listURL(id string) string {
 	return "https://cdn.contentful.com/spaces/" + c.space + "/entries?access_token=" + c.token + "&content_type=" + id + "&order=-sys.createdAt"
 }
 
-// public request/get method
+// public request/get methods
 
 func (c contentful) Get(id string) (ret data.Item, err error) {
 	req, err := http.Get(c.postURL(id))
-	defer req.Body.Close()
 	if err != nil {
 		return
 	}
+	defer req.Body.Close()
 
 	res, err := ioutil.ReadAll(req.Body)
 	if err != nil {
@@ -92,10 +90,10 @@ func (c contentful) Get(id string) (ret data.Item, err error) {
 
 func (c contentful) List(id string) (ret []data.Item, err error) {
 	req, err := http.Get(c.listURL(id))
-	defer req.Body.Close()
 	if err != nil {
 		return
 	}
+	defer req.Body.Close()
 
 	res, err := ioutil.ReadAll(req.Body)
 	if err != nil {
@@ -124,26 +122,4 @@ func (c contentful) List(id string) (ret []data.Item, err error) {
 	}
 
 	return ret, nil
-}
-
-// item class
-
-func (p item) Title() string {
-	return p.theTitle
-}
-
-func (p item) Desc() string {
-	return p.theDesc
-}
-
-func (p item) Image() string {
-	return p.theImage
-}
-
-func (p item) Slug() string {
-	return p.theSlug
-}
-
-func (p item) ID() string {
-	return p.theID
 }
