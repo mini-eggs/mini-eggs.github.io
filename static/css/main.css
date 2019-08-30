@@ -186,12 +186,17 @@ img {
 }
 
 code { 
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0 5px;
+}
+
+pre code {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
   padding: 15px;
-  background: rgba(0, 0, 0, 0.1);
   display: block;
-  border-radius: 4px;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 blockquote {
@@ -239,6 +244,8 @@ main article .desc a:hover {
 
   main ul .image-container .text h3 {
     padding: 15px;
+    font-size: 24px;
+    line-height: 28px;
   }
 
   img { 
