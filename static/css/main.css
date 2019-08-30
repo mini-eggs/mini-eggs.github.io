@@ -23,10 +23,6 @@ body > * {
   text-align: left;
 }
 
-.min-h {
-  min-height: 65vh;
-}
-
 hr {
   background: blue;
   height: 4px;
@@ -74,7 +70,6 @@ main article h6 {
 
 main {
   padding: 50px 0;
-  margin-bottom: 250px;
 }
 
 header {
@@ -171,6 +166,10 @@ img {
   border-radius: 4px;
   overflow: hidden;
   background-color: rgba(0,0,0,0.1);
+}
+
+main ul li:last-of-type .image-container {
+  margin-bottom: 0;
 }
 
 .image-container img {

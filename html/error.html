@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>evanjon.es</title>
+    <title>Error | evanjon.es</title>
     {{ template "_head.html" }}
   </head>
   <body>
-    <div class="min-h">
-      {{ template "_header.html" }}
-      <main>
-        <article>
-          <h1>Oh, fxck.</h1>
-          <div>{{ .MSG }}</div>
-        </article>
-      </main>
-    </div>
+    {{ template "_header.html" }}
+    <main>
+      <article>
+        <h1>Oh, fxck.</h1>
+        <div>{{ .MSG }}</div>
+      </article>
+    </main>
     {{ template "_footer.html" }}
   </body>
 </html>

@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>evanjon.es</title>
+    <title>Posts | evanjon.es</title>
     {{ template "_head.html" }}
   </head>
   <body>
-    <div class="min-h">
     {{ template "_header.html" }}
-      <main>
-        <ul>
-          {{ range . }}
-          <li>
-            <a href="/post/{{ .Slug }}/{{ .ID }}">
-              <div>
-                <div class="image-container">
-                  <img src="{{ .Image }}" alt="{{ .ImageAlt }}"/>
-                  <div class="text">
-                    <h3>{{ .Title }}</h3>
-                  </div>
+    <main>
+      <ul>
+        {{ range . }}
+        <li>
+          <a href="/post/{{ .Slug }}/{{ .ID }}">
+            <div>
+              <div class="image-container">
+                <img src="{{ .Image }}" alt="{{ .ImageAlt }}"/>
+                <div class="text">
+                  <h3>{{ .Title }}</h3>
                 </div>
               </div>
-            </a>
-          </li>
-          {{ end }}
-        </ul>
-      </main>
-    </div>
+            </div>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </main>
     {{ template "_footer.html" }}
   </body>
 </html>
