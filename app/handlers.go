@@ -1,7 +1,6 @@
 package app
 
 import (
-	"errors"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -59,6 +58,5 @@ func (app app) error(c *gin.Context, err error) {
 }
 
 func (app app) notFound(c *gin.Context) {
-	err := errors.New("404, not found. :/")
-	c.HTML(http.StatusNotFound, "error.html", gin.H{"MSG": err.Error()})
+	c.HTML(http.StatusNotFound, "error.html", gin.H{"MSG": "Couldn't find page. :/"})
 }

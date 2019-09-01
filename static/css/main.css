@@ -64,7 +64,6 @@ main article h3,
 main article h4, 
 main article h5, 
 main article h6 {
-  color: blue;
   font-weight: 900;
 }
 
@@ -209,6 +208,10 @@ blockquote {
 main article .desc p,
 main article .desc > * {
   margin: 15px auto;
+}
+
+main article .desc > h1:first-of-type { 
+  margin-top: 0;
 }
 
 main article .desc a {

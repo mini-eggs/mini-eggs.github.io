@@ -33,12 +33,12 @@ func Default(cp contentProvider, rss rssProvider, cfg cfgProvider) app {
 	a := app{gin.Default(), cp, rss, cfg}
 
 	a.s.Static("/static", "./static")
-	a.s.LoadHTMLGlob(cfg.TemplateDir())
+	a.s.LoadHTMLGlob(a.cfg.TemplateDir())
 
 	a.s.GET("/ping", a.ping)
 
-	a.s.GET("/", func(c *gin.Context) { a.page(c, cfg.HomeID()) })
-	a.s.GET("/about", func(c *gin.Context) { a.page(c, cfg.AboutID()) })
+	a.s.GET("/", func(c *gin.Context) { a.page(c, a.cfg.HomeID()) })
+	a.s.GET("/about", func(c *gin.Context) { a.page(c, a.cfg.AboutID()) })
 
 	a.s.GET("/posts", a.posts)
 	a.s.GET("/rss", a.rss)
@@ -50,8 +50,8 @@ func Default(cp contentProvider, rss rssProvider, cfg cfgProvider) app {
 	return a
 }
 
-func (app app) Run() {
-	app.s.Run()
+func (app app) Run() error {
+	return app.s.Run()
 }
 
 func (app app) ServeHTTP(w http.ResponseWriter, r *http.Request) {

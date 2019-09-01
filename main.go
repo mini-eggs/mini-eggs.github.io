@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"log"
 	"net/http"
 	"os"
 
@@ -11,12 +12,12 @@ import (
 	"evanjon.es/rss"
 )
 
-type i interface {
-	Run()
+type server interface {
+	Run() error
 	ServeHTTP(http.ResponseWriter, *http.Request)
 }
 
-func build() i {
+func build() server {
 	c := contentful.Default(
 		markdown.Default(),
 		os.Getenv("SPACE_ID"),
@@ -39,8 +40,12 @@ func build() i {
 	return app.Default(c, r, cfg)
 }
 
+// This func is never used in production.
+// Error checking ultimately doesn't matter here.
 func main() {
-	build().Run()
+	if e := build().Run(); e != nil {
+		log.Fatal(e)
+	}
 }
 
 // For Zeit's Now 2.0.
