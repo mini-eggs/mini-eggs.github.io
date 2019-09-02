@@ -8,7 +8,9 @@
     <meta name="twitter:title" content="{{ .Title }}" />
     <meta name="twitter:description" content="{{ .ShortDesc }}" />
     <meta name="description" content="{{ .ShortDesc }}" />
+    {{ if .Image }}
     <meta name="twitter:image:src" content="{{ .Image }}" />
+    {{ end }}
   </head>
   <body>
     {{ template "_header.html" }}
