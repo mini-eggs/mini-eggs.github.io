@@ -25,6 +25,16 @@ body > * {
 }
 */
 
+footer nav li a:after,
+header nav li a:after {
+  content: ",";
+}
+
+footer nav li:last-of-type a:after,
+header nav li:last-of-type a:after {
+  content: "";
+}
+
 header,
 footer,
 body main {
@@ -322,18 +332,8 @@ main article .desc a:hover {
     z-index: 2;
   }
 
-  footer nav li a:after,
-  header nav li a:after {
-    content: ",";
-  }
-
-  footer nav li:last-of-type a:after,
-  header nav li:last-of-type a:after {
-    content: "";
-  }
-
   footer nav li:first-of-type a,
-  header nav li:first-of-type a{
+  header nav li:first-of-type a {
     margin-left: 0;
   }
 }
