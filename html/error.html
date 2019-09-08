@@ -5,13 +5,15 @@
     {{ template "_head.html" }}
   </head>
   <body>
-    {{ template "_header.html" }}
-    <main>
-      <article>
-        <h1>Oh, fxck.</h1>
-        <div>{{ .MSG }}</div>
-      </article>
-    </main>
-    {{ template "_footer.html" }}
+    <div class='white-bg'>
+      {{ template "_header.html" }}
+      <main>
+        <article>
+          <h1>Oh, fxck.</h1>
+          <div>{{ .MSG }}</div>
+        </article>
+      </main>
+      {{ template "_footer.html" }}
+    </div>
   </body>
 </html>

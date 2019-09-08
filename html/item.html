@@ -13,19 +13,21 @@
     {{ end }}
   </head>
   <body>
-    {{ template "_header.html" }}
-    <main>
-      <article>
-        {{ if .Image }}
-        <div>
-          <div class="image-container">
-            <img src="{{ .Image }}" alt="{{ .ImageAlt }}"/>
+    <div class='white-bg'>
+      {{ template "_header.html" }}
+      <main>
+        <article>
+          {{ if .Image }}
+          <div>
+            <div class="image-container">
+              <img src="{{ .Image }}" alt="{{ .ImageAlt }}"/>
+            </div>
           </div>
-        </div>
-        {{ end }}
-        <div class="desc">{{ .Desc }}</div>
-      </article>
-    </main>
-    {{ template "_footer.html" }}
+          {{ end }}
+          <div class="desc">{{ .Desc }}</div>
+        </article>
+      </main>
+      {{ template "_footer.html" }}
+    </div>
   </body>
 </html>
