@@ -2,19 +2,29 @@ dev:
 	cat main.go | sed 's/package handler/package main/g' > tmp && \
 	rm main.go && \
 	mv tmp main.go && \
-	gin --all # go get github.com/codegangsta/gin
+	gin --all 
 
-deploy: 
+deploy: pre-deploy now-deploy post-deploy
+
+pre-deploy: 
 	cat main.go | sed 's/package main/package handler/g' > tmp && \
 	rm main.go && \
 	mv tmp main.go && \
-	now # npm i -g now
+	./build.sh && \
+	mkdir tmp && \
+	mv html tmp && \
+	mv static tmp && \
+	mv out/* .
 
-yolo: 
-	cat main.go | sed 's/package main/package handler/g' > tmp && \
-	rm main.go && \
-	mv tmp main.go && \
-	now && \
+now-deploy: 
+	now
+
+post-deploy: 
+	rm -rf html static && \
+	mv tmp/* . && \
+	rm -rf tmp out
+
+yolo: deploy
 	now alias evanjon.es && \
 	now alias www.evanjon.es
 
@@ -23,5 +33,6 @@ test:
 
 setup:
 	npm i -g now && \
-	go get github.com/codegangsta/gin
+	go get github.com/codegangsta/gin && \
+	go get github.com/tdewolff/minify/cmd/minify
 

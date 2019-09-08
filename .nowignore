@@ -1,2 +1,6 @@
 gin-bin
 vendor
+out
+tmp
+build.sh
+makefile
