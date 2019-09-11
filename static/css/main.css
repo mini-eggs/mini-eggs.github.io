@@ -33,22 +33,24 @@ body main {
   text-align: left;
 }
 
+header {
+  margin-bottom: 35px;
+  border-bottom: solid 3px #C4CBD5;
+}
+
+footer {
+  margin-top: 35px;
+  border-top: solid 3px #C4CBD5;
+}
+
 hr {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  background: blue;
+  background: #2c3e50;
   height: 4px;
   overflow: hidden;
-}
-
-hr:first-of-type {
-  margin-top: 50px;
-}
-
-hr:last-of-type {
-  margin-bottom: 50px;
 }
 
 main article * {
@@ -94,10 +96,6 @@ main {
 
 header {
   padding: 50px 0;
-  background: url('/static/img/Artboard 5.svg');
-  background-size: auto 125%;
-  background-position: center center;
-  background-repeat: no-repeat;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -112,21 +110,7 @@ footer {
 
 footer *,
 header * {
-  color: blue !important;
-}
-
-.blue-bg {
-  background: blue;
-}
-
-.blue-bg:first-of-type {
-  padding-top: 50px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-}
-
-.blue-bg:last-of-type {
-  padding-bottom: 100px;
-  box-shadow: 0 -2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  color: #2c3e50 !important;
 }
 
 .white-bg {
@@ -190,7 +174,6 @@ img {
   max-width: 100%;
   object-fit: cover;
   margin: 30px auto;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -200,10 +183,32 @@ img {
   padding-top: 56.25%; 
   position: relative; 
   margin: 0 auto 30px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
-  border-radius: 4px;
   overflow: hidden;
   background-color: rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.image-container:after,
+.image-container:before {
+  content: " ";
+  position: absolute;
+  height: 50px;
+  width: 125%;
+  background: white;
+  z-index: 2;
+  transform: rotate(3deg);
+  top: -25px;
+  left: -25px;
+}
+
+main ul li:nth-child(even) .image-container:after, 
+main ul li:nth-child(even) .image-container:before {
+  transform: rotate(-3deg);
+}
+
+.image-container:after {
+  top: initial;
+  bottom: -20px;
 }
 
 main ul li:last-of-type .image-container {
@@ -211,6 +216,7 @@ main ul li:last-of-type .image-container {
 }
 
 .image-container img {
+  border-radius: 0;
   margin: 0;
   object-fit: cover;
   position: absolute;
@@ -229,7 +235,6 @@ code {
 }
 
 pre code {
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
   padding: 15px;
   display: block;
   overflow: auto;
@@ -244,13 +249,13 @@ blockquote {
   padding: 1px 15px; /* some weird css bug? Change to 1px -> 0px to see */
 }
 
+main article .title {
+  margin-bottom: 30px;
+}
+
 main article .desc p,
 main article .desc > * {
   margin: 15px auto;
-}
-
-main article .desc > h1:first-of-type { 
-  margin-top: 0;
 }
 
 main article .desc a {
@@ -267,21 +272,9 @@ main article .desc a:hover {
   header {
     padding-left: 15px;
     padding-right: 15px;
+    flex-direction: column;
+    align-items: center
   }
-  
-  hr {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-
-  hr:first-of-type {
-    margin-top: 15px;
-  }
-  
-  hr:last-of-type {
-    margin-bottom: 15px;
-  }
-
 
   main {
     padding: 15px;
@@ -294,10 +287,6 @@ main article .desc a:hover {
     line-height: 28px;
   }
 
-  .blue-bg:first-of-type {
-    padding-top: 0;
-  }
-
   img { 
     margin: 15px auto;
   }
@@ -305,37 +294,5 @@ main article .desc a:hover {
   .image-container {
     margin-bottom: 15px;
   }
-
-  footer,
-  header { 
-    flex-direction: column;
-    align-items: flex-start;
-    background-position: right center;
-    background: none;
-    position: relative;
-  }
-
-  header:after {
-    content: " ";
-    z-index: 1;
-    background: url('/static/img/Artboard 5.svg');
-    background-size: auto 125%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  header > * {
-    position: relative;
-    z-index: 2;
-  }
-
-  footer nav li:first-of-type a,
-  header nav li:first-of-type a {
-    margin-left: 0;
-  }
 }
+
