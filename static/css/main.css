@@ -121,12 +121,11 @@ body,
 }
 
 .blue-bg:first-of-type {
-  padding-top: 50px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
 .blue-bg:last-of-type {
-  padding-bottom: 100px;
+  padding-bottom: 250px;
   box-shadow: 0 -2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
 }
 
@@ -290,10 +289,6 @@ main article .desc a:hover {
     padding: 15px;
     font-size: 24px;
     line-height: 28px;
-  }
-
-  .blue-bg:first-of-type {
-    padding-top: 0;
   }
 
   img { 
