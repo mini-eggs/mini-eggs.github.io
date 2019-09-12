@@ -80,8 +80,7 @@ func (c contentful) Get(id string) (ret data.Item, err error) {
 	entry.Fields.Raw = template.HTML(entry.Fields.Desc)
 
 	if entry.Sys.ID == "NotFound" {
-		err = errors.New(entry.Sys.ID)
-		return
+		return ret, errors.New("Hm... Not sure I can find what you're looking for. What was it called again?")
 	}
 
 	ret = item{
@@ -116,8 +115,7 @@ func (c contentful) List(id string) (ret []data.Item, err error) {
 	}
 
 	if len(entry.Items) < 1 {
-		err = errors.New("failed to find any posts")
-		return
+		return ret, errors.New("Nothing here. Darn, I know we have posts. Where could they be?! Hold on. I'll go look in the back.")
 	}
 
 	for _, single := range entry.Items {
