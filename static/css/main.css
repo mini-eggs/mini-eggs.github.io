@@ -270,6 +270,7 @@ main article .desc a:hover {
 @media (max-width: 630px) {
   footer,
   header {
+    padding: 30px 15px;
     padding-left: 15px;
     padding-right: 15px;
     flex-direction: column;
