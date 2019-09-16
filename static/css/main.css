@@ -8,8 +8,17 @@
 }
 
 body,
-body * {
+body * { 
+  display: block; /* reconsider this, perhaps */
+}
+
+script {
+  display: none;
+}
+
+.spacer {
   display: block;
+  height: 15px;
 }
 
 main,
@@ -59,14 +68,17 @@ footer nav ul li a {
   }
 
   header,
-    footer {
+  footer {
     padding: 15px;
     flex-direction: column;
   }
 
-  header *,
-    footer * {
+  header * {
     text-align: center;
+  }
+
+  footer nav {
+    margin-top: 15px;
   }
 
   main article {
@@ -122,8 +134,9 @@ img {
   margin: 0 auto;
 }
 
-.image-container:before,.image-container:after {
-  z-index: 2;
+.image-container:before,
+.image-container:after {
+  z-index: 4;
   background: #fff;
   content: " ";
   position: absolute;
@@ -151,7 +164,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 3;
+  z-index: 2;
 }
 
 .image-container .text:after {
@@ -167,7 +180,7 @@ img {
 
 .image-container .text h3 {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   padding: 25px;
 }
 
@@ -290,4 +303,72 @@ header {
 
 footer {
   border-top: solid 2px #6a8bad26;
+}
+
+/* dark */
+body.dark, 
+.dark img,
+.dark .image-container:before, 
+.dark .image-container:after {
+  background: rgba(21, 32, 43, 1);
+}
+
+.image-container .text h3 {
+  color: rgba(21, 32, 43, 1);
+}
+
+.dark main article code, 
+.dark main article code *,
+.dark main h1,  
+.dark main h2, 
+.dark main h3, 
+.dark main h4, 
+.dark main h5, 
+.dark main h6 {
+  color: #87A2BD;
+}
+
+.dark .image-container .text:after {
+  opacity: 0.3;
+}
+
+/* checkbox */
+input[type="checkbox"] {
+  position: relative;
+  -webkit-appearance: none;
+  outline: none;
+  width: 50px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #D9DADC;
+  border-radius: 50px;
+  box-shadow: inset -20px 0 0 0 #fff;
+}
+
+input[type="checkbox"]:before { 
+  content: " dark mode";
+  white-space: nowrap;
+  margin-left: 60px;
+}
+
+input[type="checkbox"]:after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: transparent;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+}
+
+input[type="checkbox"]:checked {
+  box-shadow: inset 20px 0 0 0 #4ed164;
+  border-color: #4ed164;
+}
+
+input[type="checkbox"]:checked:after {
+  left: 20px;
+  box-shadow: -2px 4px 3px rgba(0,0,0,0.05);
 }

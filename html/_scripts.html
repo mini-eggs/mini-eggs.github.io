@@ -1,0 +1,26 @@
+<script>
+  /* for dark mode */
+  (function () {
+    var darkModeEnabled = localStorage.getItem("darkmode:enabled");
+    if(darkModeEnabled === true.toString()) {darkModeEnabled = true;}
+    else {darkModeEnabled = false;}
+
+    checkDarkMode();
+
+    var checker = document.getElementById("darkmode");
+    checker.type = "checkbox";
+    checker.checked = darkModeEnabled;
+    checker.addEventListener("change", onChange);
+
+    function onChange() {
+      darkModeEnabled = checker.checked;
+      localStorage.setItem("darkmode:enabled", darkModeEnabled);
+      checkDarkMode();
+    }
+
+    function checkDarkMode() {
+      if(darkModeEnabled) {document.body.className = "dark";}
+      else {document.body.className = "";}
+    }
+  })()
+</script>
