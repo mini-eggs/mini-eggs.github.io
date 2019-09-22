@@ -307,10 +307,13 @@ footer {
 
 /* dark */
 body.dark, 
-.dark img,
 .dark .image-container:before, 
 .dark .image-container:after {
   background: rgba(21, 32, 43, 1);
+}
+
+.dark img {
+  background: #87a2bd;
 }
 
 .image-container .text h3 {

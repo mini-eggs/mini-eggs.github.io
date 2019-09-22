@@ -3,7 +3,8 @@
   (function () {
     var darkModeEnabled = localStorage.getItem("darkmode:enabled");
     if(darkModeEnabled === true.toString()) {darkModeEnabled = true;}
-    else {darkModeEnabled = false;}
+    else if(darkModeEnabled === false.toString()) {darkModeEnabled = false;}
+    else { /* the default */ darkModeEnabled = true; }
 
     checkDarkMode();
 
