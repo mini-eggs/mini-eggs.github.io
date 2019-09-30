@@ -93,10 +93,26 @@ main article p {
   margin-bottom: 15px;
 }
 
-main article p *:not(img) {
+main article code {
   display: inline-block;
 }
 
+main article pre code {
+  display: block;
+}
+
+main article ul li,
+main article ol li {
+  display: list-item;
+}
+
+main article ul,
+main article ol {
+  padding-left: 20px;
+}
+
+main article strong,
+main article em,
 main article a {
   display: initial;
 }
