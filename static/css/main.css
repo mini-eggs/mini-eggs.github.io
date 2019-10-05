@@ -76,6 +76,12 @@ footer nav ul li a {
     padding-left: 15px;
     padding-right: 15px;
   }
+
+  header ul li,
+  footer ul li {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
 }
 
 main article h1,
@@ -198,24 +204,61 @@ pre code {
   -webkit-overflow-scrolling: touch;
 }
 
-header *,footer * {
+header *,
+footer *,
+main article a {
   color: #6a8bad;
   text-decoration: none;
 }
 
-header a:hover,header a:hover *,footer a:hover,footer a:hover * {
+main article a {
   color: #2c3e50;
-  text-decoration: underline;
 }
 
+.dark main article a {
+  color: #87A2BD;
+}
+
+header a:hover,
+header a:hover *,
+footer a:hover,
+footer a:hover * {
+  color: #2c3e50;
+}
+
+header a h2:after,
+header ul li a:after,
+footer ul li a:after,
+main article a:after {
+  content: "]";
+  margin-left: 3px;
+}
+
+header a h2:before,
+header ul li a:before,
+footer ul li a:before,
+main article a:before {
+  content: "[";
+  margin-right: 3px;
+}
+
+/*
 header ul li a:after,footer ul li a:after {
   content: ",";
   margin-right: 5px;
   display: inline-block;
 }
+*/
 
-header ul li:last-of-type a:after,footer ul li:last-of-type a:after {
-  display: none;
+header ul li a:after,
+footer ul li a:after {
+  margin-right: 5px;
+}
+
+header ul li:last-of-type a:after,
+footer ul li:last-of-type a:after {
+  /* display: none; */
+  margin-right: 0;
 }
 
 main article * {

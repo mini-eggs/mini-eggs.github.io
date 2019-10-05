@@ -25,8 +25,8 @@ post-deploy:
 	rm -rf tmp out
 
 yolo: deploy
-	now alias evanjon.es && \
-	now alias www.evanjon.es
+	now alias https://evanjon-es.minieggs40.now.sh evanjon.es && \
+		now alias https://evanjon-es.minieggs40.now.sh www.evanjon.es
 
 test: 
 	go test ./...
